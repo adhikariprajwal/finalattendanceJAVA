@@ -58,7 +58,8 @@ jTable2.setModel(DbUtils.resultSetToTableModel(rs));
     
     try{
             String sql111;
-            sql111 = "select TO_DATE(sysdate, 'yyyy-mm-dd')as aa from dual";
+            //sql111 = "select TO_DATE(sysdate, 'yyyy-mm-dd')as aa from dual";
+            sql111 = "select (sysdate)as aa from dual";
             pst = (PreparedStatement) conn.prepareStatement(sql111);
             rs = (ResultSet) pst.executeQuery();
             if(rs.next())
@@ -218,7 +219,7 @@ jTable2.setModel(DbUtils.resultSetToTableModel(rs));
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testattendance","root","");
             String sql = "insert into attendence (date1, status, student_idstudent, student_subject_subjectid) values(?,?,?,?)";
             pst = (PreparedStatement) conn.prepareStatement(sql);
-            pst.setString(1,"14-APR-19");
+            pst.setString(1,"2019-04-12");
             pst.setString(2, "Present");
             pst.setString(3,jTextField1.getText());
             pst.setString(4,jLabel1.getText());
@@ -250,7 +251,7 @@ jTable2.setModel(DbUtils.resultSetToTableModel(rs));
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testattendance","root","");
             String sql = "insert into attendence values(?,?,?,?)";
             pst = (PreparedStatement) conn.prepareStatement(sql);
-            pst.setString(1,"14-APR-19");
+            pst.setString(1,"2019-04-12");
             pst.setString(2, "Absent");
             pst.setString(3,jTextField1.getText());
             pst.setString(4,jLabel1.getText());

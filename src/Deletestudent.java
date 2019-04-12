@@ -43,7 +43,8 @@ public class Deletestudent extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null,"No Connection");
         }
-        String sql = "select unique(idstudent) from student";
+        //String sql = "select unique(idstudent) from student";
+        String sql = "select idstudent from student";
         
         try{
             

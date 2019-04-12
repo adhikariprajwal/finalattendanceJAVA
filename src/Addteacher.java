@@ -220,7 +220,7 @@ public class Addteacher extends javax.swing.JFrame {
         }
         catch(Exception e)
         {
-            JOptionPane.showMessageDialog(null,"connection nathi thatu");
+            JOptionPane.showMessageDialog(null,"No Connection");
         }
         String sql = "select max(teacherid)+1 from teacher";
         

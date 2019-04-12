@@ -118,13 +118,11 @@ jTable2.setModel(DbUtils.resultSetToTableModel(rs));
 try {
     Class.forName("com.mysql.jdbc.Driver");
     conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testattendance","root","");
-    //String sql = "SELECT student_idstudent, count(CASE WHEN  status = 'Present'  then 1 END)/count(*)*100 as percentage FROM attendence where student_subject_subjectid = 102 group by student_idstudent";
-    String sql ="BEGIN\n"
-            + "make;\n"
-            + "END;\n";
+    String sql = "SELECT student_idstudent, count(CASE WHEN  status = 'Present'  then 1 END)/count(*)*100 as percentage FROM attendence where student_subject_subjectid = 102 group by student_idstudent";
+    //String sql ="BEGIN\n" + "make;\n" + "END;\n";
     pst = (PreparedStatement) conn.prepareStatement(sql);
             pst.execute();
-    String sql1 = "select * from myatt";
+    String sql1 = "select * from attendence";
     UpdateJTable(sql1);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);

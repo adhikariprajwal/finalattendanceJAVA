@@ -341,7 +341,7 @@ public class Addstudent extends javax.swing.JFrame {
         }
         catch(Exception e)
         {
-            JOptionPane.showMessageDialog(null,"connection nathi thatu");
+            JOptionPane.showMessageDialog(null,"No Connection");
         }
         String sql = "select max(idstudent)+1 from student";
         
@@ -565,7 +565,7 @@ public class Addstudent extends javax.swing.JFrame {
          
          try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "umang");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testattendance","root","");
             String sql = "insert into student (idstudent,studentname, dept,semester, subject_subjectid) values(?,?,?,?,?)";
             pst = (PreparedStatement) conn.prepareStatement(sql);
             pst.setString(1,jTextField2.getText());
